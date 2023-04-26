@@ -16,69 +16,48 @@
 <body>
   <div class="container">
     <h3>Contact Form</h3>
-    <div class="bg-light p-3">
-      <form>
-        <div class="form-group">
-          <label>Buyer's Name</label>
-          <input type="text" class="form-control" placeholder="Your name..">
-        </div>
-        <div class="form-group">
-          <label>Mobile</label>
-          <input type="number" class="form-control">
-        </div>
-        <label>Address</label>
-        <select class="custom-select mb-3">
-          <option selected>Australia</option>
-          <option>Bangladesh</option>
-          <option>Spain</option>
-        </select>
-        <div class="form-group form-check">
-          <label class="form-check-label ">
-            <input class="form-check-input" type="checkbox"> Due
-          </label>
-        </div>
-        <h5>Payment Method</h5>
-        <h6>Accepted Cards</h6>
-        <div class="clearfix pb-4 pt-2">
-          <div class="float-left pr-3"><i class="fa-brands fa-cc-visa fa-2xl" style="color: #00007b;"></i></div>
-          <div class="float-left pr-3"><i class="fa-brands fa-cc-amex fa-2xl" style="color: #4c85e6;"></i></div>
-          <div class="float-left pr-3"><i class="fa-brands fa-cc-mastercard fa-2xl" style="color: #ff0000;"></i></div>
-          <div class="float-left pr-3"><i class="fa-brands fa-cc-discover fa-2xl" style="color: #ffa500;"></i></div>
-        </div>
+    <form class="bg-light p-3">
+      <div class="form-group">
+        <label>Buyer's Name</label>
+        <input type="text" class="form-control" placeholder="Your name..">
+      </div>
+      <div class="form-group">
+        <label>Mobile</label>
+        <input type="number" class="form-control">
+      </div>
+      <label>Address</label>
+      <select class="custom-select mb-3">
+        <option selected>Australia</option>
+        <option>Bangladesh</option>
+        <option>Spain</option>
+      </select>
+      <div class="form-group form-check">
+        <label class="form-check-label ">
+          <input class="form-check-input" type="checkbox"> Due
+        </label>
+      </div>
+      <h5>Payment Method</h5>
+      <h6>Accepted Cards</h6>
+      <div class="clearfix pb-4 pt-2">
+        <div class="float-left pr-3"><i class="fa-brands fa-cc-visa fa-2xl" style="color: #00007b;"></i></div>
+        <div class="float-left pr-3"><i class="fa-brands fa-cc-amex fa-2xl" style="color: #4c85e6;"></i></div>
+        <div class="float-left pr-3"><i class="fa-brands fa-cc-mastercard fa-2xl" style="color: #ff0000;"></i></div>
+        <div class="float-left pr-3"><i class="fa-brands fa-cc-discover fa-2xl" style="color: #ffa500;"></i></div>
+      </div>
+    </form>
 
-        <div id="hidden_part" class="p-3">
-          <button id="close-button" class="btn">x</button>
-            <div class="form-group">
-              <label>Product Name</label>
-              <input type="text" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Description</label>
-              <input type="text" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Quantity</label>
-              <input type="number" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Rate</label>
-              <input type="number" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Amount</label>
-              <input type="number" class="form-control">
-            </div>
-        </div>
-        <div id="submit_part" class="clearfix">
-          <div class="float-left pr-3">
-            <button id="new_page" class="btn btn-light border-dark">&plus;</button>
-          </div>
-          <div class="float-left pr-3">
-            <button id="submit" class="btn btn-success">Submit</button>
-          </div>
-        </div>
-      </form>
+    <div class="bg-light p-3" id="form-body">
+      
+    </div>
+    <div id="submit_part" class="clearfix bg-light p-3">
+      <div class="float-left pr-3">
+        <button id="new_page" class="btn btn-light border-dark">&plus;</button>
+      </div>
+      <div class="float-left pr-3">
+        <button id="submit" class="btn btn-success">Submit</button>
+      </div>
     </div>
   </div>
+  <script src="index.js"></script>
 </body>
 </html>
