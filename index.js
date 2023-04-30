@@ -2,10 +2,19 @@ const formBody = document.getElementById("form-body");
 
 const objectStroage = [];
 var count = 0;
-var a =1;
+var x =0;
 document.getElementById("new_page").addEventListener("click", function (a) {
   a.preventDefault();
   console.log("test")
+  if(x>0){
+    const fd = new FormData(form);
+    const obj = Object.fromEntries(fd);
+    const json = JSON.stringify(obj);
+    objectStroage[count]=json;
+    count += 1;
+    console.log(count);
+    console.log(objectStroage);
+  }
 
   const  htmlform=`
   <div id="hidden_part" class="p-3">
@@ -36,24 +45,44 @@ const htmlBody= document.createElement("div");
 htmlBody.innerHTML=htmlform;
 
 formBody.appendChild(htmlBody);
-
+x+=1;
   // formBody.innerHTML += 
-
 })
+// document.getElementById("new_page").addEventListener("click", function(){
+// if(x>0){
+
+// }
+
+// })
 
 const form = document.querySelector('form');
-form.addEventListener('submit', function (a) {
+// form.addEventListener('submit', function (a) {
 
+//   a.preventDefault();
+//   const fd = new FormData(form);
+//   const obj = Object.fromEntries(fd);
+//   const json = JSON.stringify(obj);
+//   objectStroage[count]=json;
+//   count += 1;
+//   a+=1;
+//   console.log(json);
+//   console.log(objectStroage);
+// })
+
+// form.addEventListener('new_page', function(a) {
+//   a.preventDefault();
+//   const fd = new FormData(form);
+//   const obj = Object.fromEntries(fd);
+//   const json = JSON.stringify(obj);
+//   objectStroage[count]=json;
+//   count += 1;
+//   console.log(count);
+// })
+document.getElementById("submit").addEventListener('click',function(a){
   a.preventDefault();
-  const fd = new FormData(form);
-  const obj = Object.fromEntries(fd);
-  const json = JSON.stringify(obj);
-  objectStroage[count]=json;
-  count += 1;
-  a+=1;
-  console.log(json);
   console.log(objectStroage);
 })
 
-
-
+// document.getElementById("close-button").addEventListener('click',function(){
+//   this.style.display = "none";
+// })
