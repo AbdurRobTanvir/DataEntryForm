@@ -1,11 +1,10 @@
-#hidden_part{
+.hidden-part{
     position: relative;
 }
-#close-button{
-    font-size: 20px;
-    font-weight: bold;
+.close-button{
+    font-size: 20px !important;
+    font-weight: bold !important;
     position: absolute;
     right: 20px;
     top: 0;
-    padding: 0;
 }
