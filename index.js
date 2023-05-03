@@ -91,15 +91,17 @@ function remove(x) {
   console.log(x);
   console.log(count);
 
-  for (let i = 0; i <= count; i++) {
-    if (x.includes(i)) {
-      removedString = i;
-      var node = "hidden_part" + i;
-    }
-  }
-  
-  let removedPart = document.getElementById(node);
-  removedPart.parentNode.removeChild(removedPart);
+  xr = document.getElementById(x);
+  xr.parentNode.remove();
+  // for (let i = 0; i <= count; i++) {
+  //   if (x.includes(i)) {
+  //     removedString = i;
+  //     var node = "hidden_part" + i;
+  //   }
+  // }
+
+  // let removedPart = document.getElementById(node);
+  // removedPart.parentNode.removeChild(removedPart);
   // count--;
   // node.remove();
 
@@ -111,20 +113,20 @@ function remove(x) {
 }
 document.getElementById("submit").addEventListener('click', function (a) {
   a.preventDefault();
-  objectStroage.length =0;
+  objectStroage.length = 0;
   for (let i = 0; i < count; i++) {
-    if (i !== removedString) {
-      let productObject = {
-        ProductName: document.getElementById("product_name" + i).value,
-        ProductDescription: document.getElementById("product_description" + i).value,
-        Quantity: document.getElementById("product_quantity" + i).value,
-        Rate: document.getElementById("product_rate" + i).value,
-        Amount: document.getElementById("product_amount" + i).value
-      };
-      const json = JSON.stringify(productObject);
-      // objectStroage.push(json);
+    let productObject = {
+      ProductName: document.getElementById("product_name" + i)?.value,
+      ProductDescription: document.getElementById("product_description" + i)?.value,
+      Quantity: document.getElementById("product_quantity" + i)?.value,
+      Rate: document.getElementById("product_rate" + i)?.value,
+      Amount: document.getElementById("product_amount" + i)?.value
+    };
+    const json = JSON.stringify(productObject);
+    if (typeof productObject.ProductName !== "undefined") {
       objectStroage.push(productObject);
     }
+
   }
   console.log(objectStroage);
 })
