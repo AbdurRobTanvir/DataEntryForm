@@ -2,9 +2,10 @@ const formBody = document.getElementById("form-body");
 
 const objectStroage = [];
 var count = 0;
-var x = 0;
-var a = false;
-var b = false;
+// var x = 0;
+// var a = false;
+// var b = false;
+var removedString;
 document.getElementById("new_page").addEventListener("click", function (a) {
   a.preventDefault();
   console.log("test")
@@ -21,7 +22,7 @@ document.getElementById("new_page").addEventListener("click", function (a) {
 
   const htmlform = `
   <div id=${"hidden_part" + count} class="p-3 hidden-part">
-    <button id=${"close_button" + count} class="btn close-button">x</button>
+    <button onclick="remove(this.id)" id=${"close_button" + count} type="button" class="btn close-button">x</button>
     <div class="form-group">
       <label for="pname">Product Name</label>
       <input type="text" class="form-control" id = ${"product_name" + count} name = "pname">
@@ -49,7 +50,7 @@ document.getElementById("new_page").addEventListener("click", function (a) {
 
   formBody.appendChild(htmlBody);
   count = count + 1;
-})
+});
 
 
 const form = document.querySelector('form');
@@ -86,18 +87,44 @@ const form = document.querySelector('form');
 //   }
 // }
 
+function remove(x) {
+  console.log(x);
+  console.log(count);
 
+  for (let i = 0; i <= count; i++) {
+    if (x.includes(i)) {
+      removedString = i;
+      var node = "hidden_part" + i;
+    }
+  }
+  
+  let removedPart = document.getElementById(node);
+  removedPart.parentNode.removeChild(removedPart);
+  // count--;
+  // node.remove();
+
+  // if (node.parentNode) {
+  //   console.log("working");
+  //   node.parentNode.removeChild(node);
+  // }
+
+}
 document.getElementById("submit").addEventListener('click', function (a) {
   a.preventDefault();
+  objectStroage.length =0;
   for (let i = 0; i < count; i++) {
-    let productObject = {
-      ProductName: document.getElementById("product_name" + i).value,
-      ProductDescription: document.getElementById("product_description" + i).value,
-      Quantity: document.getElementById("product_quantity" + i).value,
-      Rate: document.getElementById("product_rate" + i).value,
-      Amount: document.getElementById("product_amount" + i).value
-    };
-    objectStroage.push(productObject);
+    if (i !== removedString) {
+      let productObject = {
+        ProductName: document.getElementById("product_name" + i).value,
+        ProductDescription: document.getElementById("product_description" + i).value,
+        Quantity: document.getElementById("product_quantity" + i).value,
+        Rate: document.getElementById("product_rate" + i).value,
+        Amount: document.getElementById("product_amount" + i).value
+      };
+      const json = JSON.stringify(productObject);
+      // objectStroage.push(json);
+      objectStroage.push(productObject);
+    }
   }
   console.log(objectStroage);
 })
@@ -122,3 +149,10 @@ document.getElementById("submit").addEventListener('click', function (a) {
 //   a.preventDefault();
 //   b = true;
 // })
+
+// function remove(){
+//   let node = this.id;
+// if (node.parentNode) {
+//   node.parentNode.removeChild(node);
+// }
+// }
