@@ -81,9 +81,9 @@ document.getElementById("submit").addEventListener('click', function (a) {
     //   Rate: document.getElementById("product_rate" + i)?.value,
     //   Amount: document.getElementById("product_amount" + i)?.value
     // };
-    if(products[i].querySelector(".product-name-input").value==="undefined"){
-      continue;
-    }
+    // if(products[i].querySelector(".product-name-input").value==="undefined"){
+    //   continue;
+    // }
 
       const productName = products[i].querySelector(".product-name-input").value;
       const productDescription = products[i].querySelector(".product-description").value;
